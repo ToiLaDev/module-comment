@@ -1,0 +1,27 @@
+{
+    "name": "toiladev/module-comment",
+    "description": "Moduler Comment for ToiLaDev",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mr. VnS",
+            "email": "mrvns@live.com"
+        }
+    ],
+    "require": {
+        "toiladev/core": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ToiLaDev\\Comment\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ToiLaDev\\Comment\\ServiceProvider"
+            ]
+        }
+    }
+}

@@ -45,7 +45,7 @@ class CommentController extends Controller
         $categories = $this->blogService->allCategories();
 
         return view('Blog::admin.post.create', [
-            'options' => $this->blogService->toSelect($categories)
+            'options' => toSelect($categories->toFlatTree())
         ]);
     }
 
@@ -57,7 +57,7 @@ class CommentController extends Controller
         $post = $this->blogService->find($id);
         return view('Blog::admin.post.edit', [
             'post' => $post,
-            'options' => $this->blogService->toSelect($categories),
+            'options' => toSelect($categories->toFlatTree()),
             'categories' => $this->blogService->idCategories($post)
         ]);
     }
